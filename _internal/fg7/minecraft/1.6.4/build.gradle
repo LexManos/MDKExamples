@@ -12,7 +12,7 @@ minecraft {
             workingDir = file('runs/main/client/')
         }
         register('server') {
-            args '--nogui', 'fml_bug', '--port', 25565 + 1122
+            args '--nogui', 'fml_bug', '--port', 25565 + 164
             workingDir = file('runs/main/server/')
         }
     }
@@ -22,4 +22,8 @@ apply from: file('../shared.gradle')
 
 dependencies {
     implementation minecraft.dependency("net.minecraftforge:forge:${minecraft_version}-${forge_version}")
+    // This is needed but gradle is stupid and won't resolve it even tho it exists on maven just fine.
+    // We also have issues with forge being compiled targeting java 6
+    // Thats fixable on mavenizer side 
+    implementation("net.minecraftforge.lex:legacyjavafixer:1.0")
 }
