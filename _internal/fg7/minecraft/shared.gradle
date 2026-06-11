@@ -8,10 +8,10 @@ repositories {
 // This is only needed if we are testing local builds
 fgtools {
     configure('slimelauncher') {
-        version = '0.2.1'
+        //version = '0.2.1'
     }
     configure('mavenizer') {
-        version = '0.5.10'
+        //version = '0.5.10'
     }
 }
 
